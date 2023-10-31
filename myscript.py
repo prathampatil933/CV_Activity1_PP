@@ -3,7 +3,7 @@ import numpy as np
 
 def main():
     # Input image file path
-    image_path = "your_image.jpg"  # Provide the path to your image file
+    image_path = "input2.jpg"  # Provide the path to your image file
 
     # Load the image
     image = cv2.imread(image_path, 0)
@@ -27,7 +27,7 @@ def main():
     translated_image = cv2.warpAffine(image, translation_matrix, (image.shape[1], image.shape[0]))
     rotated_image = cv2.warpAffine(image, cv2.getRotationMatrix2D((image.shape[1] / 2, image.shape[0] / 2), rotation_angle, 1), (image.shape[1], image.shape[0]))
     scaled_image = cv2.resize(image, None, fx=scaling_factors[0], fy=scaling_factors[1])
-    sheared_image = cv2.warpAffine(image, shearing_matrix, (image.shape[1], image.shape[0))
+    sheared_image = cv2.warpAffine(image, shearing_matrix, (image.shape[1], image.shape[0]))
 
     # Display the transformed images
     cv2.imshow('Translated Image', translated_image)
